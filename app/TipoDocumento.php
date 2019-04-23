@@ -1,0 +1,16 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class TipoDocumento extends Model
+{
+    protected $table = 'tipo_documento';
+    protected $fillable = ['id','tipo_documento'];
+    
+    public function tipoDocumentoPaciente()
+    {
+        return $this->hasOne('Paciente','tipo_documento');
+    }
+}
